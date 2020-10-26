@@ -53,9 +53,9 @@ At a minimum, just the `host` and `port` fields are required to use a proxy.
 
 ### Making Requests
 
-Make an API request with a payload in the structure documented by the cnpAPI but **using snake_case**. The request payload will be **converted to camelCase** for you.
+Make an API request with a payload in the structure and order documented by the cnpAPI but **using snake_case**. The request payload will be **converted to camelCase** internally before submission.
 
-Since generating part of the request body (root and authentication elements) is taken care of, we just specify the child element. For example, when creating a Sale transaction, it would look like:
+Since generating part of the request body is taken care of (e.g. the XML root and authentication elements) we just specify the child element. For example, when creating a Sale transaction, it would look like:
 
 ```ruby
 client.create_transaction(
@@ -75,15 +75,15 @@ client.create_transaction(
 )
 ```
 
-Keys prefixed with "@" will be serialized to an XML attribute, while all others become XML elements.
+Any keys prefixed with "@" will be serialized to an XML attribute, while all others become XML elements. Note that this does not apply to responses.
 
-The cnpAPI enforces the order of XML elements, so the hash keys provided must be in the same order.
+**IMPORTANT**: The cnpAPI enforces the order of XML elements, so the hash keys provided must be declared in the same order as it would if it were XML.
 
 For now, the library only supports cnpAPI online requests. No batch requests.
 
 ### Handling Responses
 
-The response is an underlying hash **in snake_case** form. No typed response objects. So considering the earlier Sale request example, we can use `dig` to retrieve specific values.
+The generic response object is essentially an underlying hash **in snake_case** form. No typed response objects. So considering the earlier Sale request example, we can use `dig` to retrieve specific values from the response.
 
 ```ruby
 response.status_code
@@ -94,9 +94,9 @@ response.dig(:sale_response, :message)
 # => "Approved"
 ```
 
-The response data starts with the value of the root XML element (attributes included) so no need to do lookups with the root XML key.
+Note: The response data starts with **the value of** the root XML element (attributes included) so do not specify the root XML key as part of the lookup process.
 
-Since the cnpAPI still returns a HTTP 200 response for errors (the XML root `response` attribute value is 1 through 5) a `WorldpayCnp::Error::InvalidFormatError` will be raised with the included response code and message.
+Since the cnpAPI returns an HTTP 200 response for errors, an `WorldpayCnp::Error::InvalidFormatError` will be raised with the included parsed response code and message. The response code comes from the XML root `response` attribute and can be a value of "1" through "5" as a string, not an integer.
 
 ## Development
 
