@@ -1,8 +1,26 @@
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'
-set -vx
 
 bundle install
 
-# Do any other automated setup that you need to do here
+read -r -p 'Do you have a Worldpay Prelive account? (y/n) ' has_account
+
+if [[ "$has_account" =~ ^(No|no|N|n)$ ]]; then
+  echo "Then you'll need to get credentials first or rely on"
+  echo "the sandbox environment. No account or auth required."
+  exit 0
+fi
+
+echo "Enter your Prelive credentials below."
+read -p 'API Username: ' username
+read -p 'API Password: ' password
+read -p 'Merchant Id: ' merchant_id
+
+cp .env.sample .env
+
+sed -i '' -e "s/YOUR_API_USERNAME/$username/g" .env
+sed -i '' -e "s/YOUR_API_PASSWORD/$password/g" .env
+sed -i '' -e "s/YOUR_MERCHANT_ID/$merchant_id/g" .env
+
+echo "Done."
