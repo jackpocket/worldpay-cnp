@@ -1,6 +1,6 @@
 # WorldpayCnp
 
-A Ruby library for the Worldpay cnpAPI. Just a simple interface for creating transactions as a Ruby hash to XML and back. So no real request objects. Since the cnpAPI uses camelCase, this library will handle converting to and from snake_case for you.
+A Ruby library for the Worldpay cnpAPI with a simple interface for creating transactions as a Ruby hash to XML and back. So no real request objects. Since the cnpAPI uses camelCase, this library will handle converting to and from snake_case for you. While Worldpay has an official [CnpOnline Ruby SDK](https://github.com/Vantiv/cnp-sdk-for-ruby), they no longer support it.
 
 ## Installation
 
@@ -23,7 +23,7 @@ client = WorldpayCnp::Client.new(
   username: "YOUR_USERNAME",
   password: "YOUR_PASSWORD",
   merchant_id: "YOUR_MERCHANT_ID",
-  # Below are options with their default values
+  # These are the other available options with their default values
   version: "12.8",
   environment: :prelive,
   timeout: nil, # with an integer, it is in seconds
@@ -49,7 +49,7 @@ WorldpayCnp::Client.new(
 )
 ```
 
-At a minimum, just the `host` and `port` are required to use a proxy.
+At a minimum, just the `host` and `port` fields are required to use a proxy.
 
 ### Making Requests
 
