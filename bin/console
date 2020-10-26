@@ -1,10 +1,24 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require "dotenv/load"
 require "worldpay_cnp"
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
+
+def authenticated_client(**options)
+  WorldpayCnp::Client.new(
+    username: ENV["USERNAME"],
+    password: ENV["PASSWORD"],
+    merchant_id: ENV["MERCHANT_ID"],
+    **options
+  )
+end
+
+def sandbox_client(**options)
+  WorldpayCnp::Client.new(environment: :sandbox, **options)
+end
 
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
