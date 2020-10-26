@@ -1,8 +1,6 @@
 # WorldpayCnp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/worldpay_cnp`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Ruby library for the Worldpay cnpAPI. Just a simple interface for creating transactions as a Ruby hash to XML and back. So no real request objects. Since the cnpAPI uses camelCase, this library will handle converting to and from snake_case for you.
 
 ## Installation
 
