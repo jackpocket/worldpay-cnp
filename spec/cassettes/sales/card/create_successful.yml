@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://payments.vantivprelive.com/vap/communicator/online
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <cnpOnlineRequest xmlns="http://www.vantivcnp.com/schema" version="12.8" merchantId="{MERCHANT_ID}">
+          <authentication>
+            <user>{USERNAME}</user>
+            <password>{PASSWORD}</password>
+          </authentication>
+          <sale id="test-CqjvuYXyN3SnQbxJdUVf" reportGroup="Default Report Group">
+            <orderId>test-BfPHTUcDlqzel4vh77lC</orderId>
+            <amount>1000</amount>
+            <orderSource>ecommerce</orderSource>
+            <card>
+              <type>VI</type>
+              <number>4457010000000009</number>
+              <expDate>1025</expDate>
+              <cardValidationNum>349</cardValidationNum>
+            </card>
+          </sale>
+        </cnpOnlineRequest>
+    headers:
+      Content-Type:
+      - text/xml; charset=UTF-8
+      User-Agent:
+      - WorldpayCnpRubyGem/0.1.0
+      X-Ruby-Version:
+      - 2.6.6
+      X-Ruby-Platform:
+      - x86_64-darwin19
+      Connection:
+      - close
+      Host:
+      - payments.vantivprelive.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=E6AFACF5FEC641292A5BF37C6CFC9053; Path=/vap; Secure; HttpOnly
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '754'
+      Date:
+      - Fri, 23 Oct 2020 20:58:41 GMT
+      Server:
+      - HTTP/1.1
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        <cnpOnlineResponse version="12.8"
+            xmlns="http://www.vantivcnp.com/schema" response="0" message="Valid Format">
+            <saleResponse id="test-CqjvuYXyN3SnQbxJdUVf" reportGroup="Default Report Group">
+                <cnpTxnId>83985003592635212</cnpTxnId>
+                <orderId>test-BfPHTUcDlqzel4vh77lC</orderId>
+                <response>000</response>
+                <responseTime>2020-10-23T20:58:41</responseTime>
+                <postDate>2020-10-23</postDate>
+                <message>Approved</message>
+                <authCode>11111 </authCode>
+                <fraudResult>
+                    <avsResult>34</avsResult>
+                    <cardValidationResult>M</cardValidationResult>
+                </fraudResult>
+                <networkTransactionId>707416513437831</networkTransactionId>
+            </saleResponse>
+        </cnpOnlineResponse>
+  recorded_at: Fri, 23 Oct 2020 20:58:41 GMT
+recorded_with: VCR 6.0.0

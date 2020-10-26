@@ -27,3 +27,19 @@ VCR.configure do |c|
   c.filter_sensitive_data('{MERCHANT_ID}') { ENV['MERCHANT_ID'] }
 end
 
+def authenticated_client(**options)
+  WorldpayCnp::Client.new(
+    username: ENV["USERNAME"],
+    password: ENV["PASSWORD"],
+    merchant_id: ENV["MERCHANT_ID"],
+    **options
+  )
+end
+
+def fixture_file(name)
+  File.new(File.expand_path("../fixtures/#{name}", __FILE__))
+end
+
+def random_alphanumeric_id
+  "test-#{SecureRandom.alphanumeric(20)}"
+end

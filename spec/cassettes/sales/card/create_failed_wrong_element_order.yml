@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://payments.vantivprelive.com/vap/communicator/online
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <cnpOnlineRequest xmlns="http://www.vantivcnp.com/schema" version="12.8" merchantId="{MERCHANT_ID}">
+          <authentication>
+            <user>{USERNAME}</user>
+            <password>{PASSWORD}</password>
+          </authentication>
+          <sale id="test-MbgFV985wJLQbDMufnCT" reportGroup="Default Report Group">
+            <amount>1000</amount>
+            <orderId>test-0bjteMSUw1xcWHLP6X40</orderId>
+            <orderSource>ecommerce</orderSource>
+            <card>
+              <type>VI</type>
+              <number>4457010000000009</number>
+              <expDate>1025</expDate>
+              <cardValidationNum>349</cardValidationNum>
+            </card>
+          </sale>
+        </cnpOnlineRequest>
+    headers:
+      Content-Type:
+      - text/xml; charset=UTF-8
+      User-Agent:
+      - WorldpayCnpRubyGem/0.1.0
+      X-Ruby-Version:
+      - 2.6.6
+      X-Ruby-Platform:
+      - x86_64-darwin19
+      Connection:
+      - close
+      Host:
+      - payments.vantivprelive.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '252'
+      Date:
+      - Mon, 26 Oct 2020 17:37:21 GMT
+      Server:
+      - HTTP/1.1
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        <cnpOnlineResponse version="12.17"
+            xmlns="http://www.vantivcnp.com/schema" response="1" message="Error validating xml data against the schema on line 8&#xa;tag name &quot;amount&quot; is not allowed. Possible tag names are: [cnpTxnId],[orderId]"/>
+  recorded_at: Mon, 26 Oct 2020 17:37:21 GMT
+recorded_with: VCR 6.0.0

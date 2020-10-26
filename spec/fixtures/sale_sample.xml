@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<cnpOnlineRequest xmlns="http://www.vantivcnp.com/schema" version="12.8" merchantId="1">
+  <authentication>
+    <user>username</user>
+    <password>password</password>
+  </authentication>
+  <sale id="test-123" reportGroup="Default Report Group">
+    <orderId>test-456</orderId>
+    <amount>1000</amount>
+    <orderSource>ecommerce</orderSource>
+    <card>
+      <type>VI</type>
+      <number>4457010000000009</number>
+      <expDate>1025</expDate>
+      <cardValidationNum>349</cardValidationNum>
+    </card>
+  </sale>
+</cnpOnlineRequest>
