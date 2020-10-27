@@ -56,7 +56,7 @@ RSpec.describe WorldpayCnp::Configuration do
 
     custom_options.each do |name, value|
       it "sets #{name} config with #{value.inspect}" do
-        config = described_class.new({ name => value })
+        config = described_class.new(**{name => value})
         expect(config.public_send(name)).to eq value
       end
     end

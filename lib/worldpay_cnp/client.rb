@@ -8,7 +8,7 @@ module WorldpayCnp
     # @param options [Hash]
     # @return [WorldpayCnp::Client]
     def initialize(**options)
-      @config = Configuration.new(options)
+      @config = Configuration.new(**options)
     end
 
     def create_transaction(data)
