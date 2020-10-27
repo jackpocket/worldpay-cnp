@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Javier Julio"]
   spec.email         = ["javier@jackpocket.com"]
 
-  spec.summary       = "A Ruby interface to the Worldpay CNP API."
-  spec.description   = "A Ruby interface to the Worldpay CNP API."
+  spec.summary       = "A modern Ruby interface to the Worldpay cnpAPI."
+  spec.description   = "A modern Ruby interface to the Worldpay cnpAPI."
   spec.homepage      = "https://github.com/jackpocket/worldpay_cnp"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
