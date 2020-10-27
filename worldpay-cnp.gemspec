@@ -15,8 +15,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "http", '>= 4', '< 5'
   spec.add_dependency "nokogiri", '~> 1.0'
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
