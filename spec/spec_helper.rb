@@ -27,6 +27,8 @@ VCR.configure do |c|
   c.filter_sensitive_data('{MERCHANT_ID}') { ENV['MERCHANT_ID'] }
 end
 
+TRANSACTION_ID_REGEX = /\d{1,19}/
+
 def authenticated_client(**options)
   WorldpayCnp::Client.new(
     username: ENV["USERNAME"],

@@ -30,6 +30,7 @@ RSpec.describe WorldpayCnp::Client do
       expect(response.dig(:response)).to eq "0" # means valid format
       expect(response.dig(:sale_response, :response)).to eq "000"
       expect(response.dig(:sale_response, :message)).to eq "Approved"
+      expect(response.dig(:sale_response, :cnp_txn_id)).to match(TRANSACTION_ID_REGEX)
     end
 
     it "fails when elements are in wrong order" do
