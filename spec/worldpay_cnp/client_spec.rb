@@ -38,7 +38,7 @@ RSpec.describe WorldpayCnp::Client do
         VCR.use_cassette('sales/card/create_failed_wrong_element_order') do
           authenticated_client.create_transaction(
             sale: {
-              amount: '1000', # this field is in wrong order to simulate error
+              amount: '1000', # this is in the wrong order to force an error
               '@id': random_alphanumeric_id,
               '@report_group': 'Default Report Group',
               order_id: random_alphanumeric_id,
