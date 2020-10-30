@@ -12,6 +12,7 @@ def authenticated_client(**options)
     username: ENV["USERNAME"],
     password: ENV["PASSWORD"],
     merchant_id: ENV["MERCHANT_ID"],
+    environment: :prelive,
     **options
   )
 end

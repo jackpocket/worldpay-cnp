@@ -28,7 +28,7 @@ module WorldpayCnp
     private
 
     def set_defaults
-      @environment = :prelive
+      @environment = :sandbox
       @version = "12.8"
       @xml_namespace = "http://www.vantivcnp.com/schema"
       @xml_request_root = "cnpOnlineRequest"

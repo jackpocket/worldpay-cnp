@@ -25,7 +25,7 @@ client = WorldpayCnp::Client.new(
   merchant_id: "YOUR_MERCHANT_ID",
   # These are the other available options with their default values
   version: "12.8",
-  environment: :prelive,
+  environment: :sandbox,
   timeout: nil, # with an integer, it is in seconds
   proxy: nil,
   xml_namspace: "http://www.vantivcnp.com/schema",

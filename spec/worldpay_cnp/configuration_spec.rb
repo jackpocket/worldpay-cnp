@@ -4,8 +4,8 @@ RSpec.describe WorldpayCnp::Configuration do
     let(:config) { described_class.new }
 
     defaults = {
-      environment: :prelive,
-      api_url: "https://payments.vantivprelive.com/vap/communicator/online",
+      environment: :sandbox,
+      api_url: "https://www.testvantivcnp.com/sandbox/communicator/online",
       version: "12.8",
       xml_namespace: "http://www.vantivcnp.com/schema",
       xml_request_root: "cnpOnlineRequest"
