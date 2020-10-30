@@ -6,6 +6,15 @@ RSpec.describe WorldpayCnp::Client do
     end
   end
 
+  let(:valid_card_attributes) do
+    {
+      type: 'VI',
+      number: '4457010000000009',
+      exp_date: '1025',
+      card_validation_num: '349',
+    }
+  end
+
   describe "sale transactions" do
     it "creates a sale successfully" do
       response = VCR.use_cassette('sales/card/create_successful') do
@@ -16,12 +25,7 @@ RSpec.describe WorldpayCnp::Client do
             order_id: random_alphanumeric_id, # max length is 25
             amount: '1000',
             order_source: 'ecommerce',
-            card: {
-              type: 'VI',
-              number: '4457010000000009',
-              exp_date: '1025',
-              card_validation_num: '349',
-            }
+            card: valid_card_attributes
           }
         )
       end
@@ -43,12 +47,7 @@ RSpec.describe WorldpayCnp::Client do
               '@report_group': 'Default Report Group',
               order_id: random_alphanumeric_id,
               order_source: 'ecommerce',
-              card: {
-                type: 'VI',
-                number: '4457010000000009',
-                exp_date: '1025',
-                card_validation_num: '349',
-              }
+              card: valid_card_attributes
             }
           )
         end
