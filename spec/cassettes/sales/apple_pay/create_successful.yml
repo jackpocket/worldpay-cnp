@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://payments.vantivprelive.com/vap/communicator/online
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <cnpOnlineRequest xmlns="http://www.vantivcnp.com/schema" version="12.8" merchantId="{MERCHANT_ID}">
+          <authentication>
+            <user>{USERNAME}</user>
+            <password>{PASSWORD}</password>
+          </authentication>
+          <sale id="test-udOcKgDIyEcqdpKbqqTv" reportGroup="Default Report Group">
+            <orderId>test-Z8PheHMSPVMrzvdB2hQD</orderId>
+            <amount>1000</amount>
+            <orderSource>applepay</orderSource>
+            <billToAddress>
+              <firstName>John</firstName>
+              <lastName>Smith</lastName>
+              <addressLine1>8 W 40th St</addressLine1>
+              <addressLine2/>
+              <city>New York</city>
+              <state>NY</state>
+              <zip>10012</zip>
+              <country>US</country>
+              <email>johnsmith@example.com</email>
+              <phone>2016551000</phone>
+            </billToAddress>
+            <applepay>
+              <data>eav3v8jTY2Ffn+r+gWaPGDdHF0eFhRCh0CkPdKefYFePN/vUSJWCynsolgEme+4z9yP//pQqSWVZ7j64Z7qOR47nV1UR3RSbv0e88HRE1mBcBt4BqPUqPynK/WedfzGFih8lbDEC3eQ2dG52xGLxtx8yhsjXYxHwuCk/SqtdPenQi7WoXTUOJIfxTI3Kl6bHaTNhRHUwJDWaPAadf8p8IrIHcDCDWE8mFMZsy5qyTYz8pNvDFOB4lrRd+I3ahouSEI+7sOA3IX+8FDDCPOWh64A2AsVb37t/IWh2+ue8c46KNoOAlL0/55GH2yPgeCwS1uExakSgEFE26Y5V3EeHcWBvlwQM2kCiJ9zwRhYCa8XtCP9ha4n0ktmLqEjmMonOaovNLq5Bc1j8tckFZ2LmwcVcRTUi6AHnuOIFpA==</data>
+              <header>
+                <ephemeralPublicKey>K6jmLKQ4kQx8DkfP5xiIb6vAv8ad9MYXnDno+8XCmHG5jZSUady6Ahez9Kc9ar/HYKPcyI7wxHK7stNkA8mSGkRljSpZdOvVk9eFZAhRZaLasOHo2knsOUG5iWI=</ephemeralPublicKey>
+                <publicKeyHash>tZE9cgJRxHqouQ1rQC06JZ1KDRYg7nqk9L7wlafPmp0=</publicKeyHash>
+                <transactionId>4c44eb217747940ec316d074e725befcac6065057bf9f9ba8f72b2f1a8ef1567</transactionId>
+              </header>
+              <signature>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</signature>
+              <version>EC_v1</version>
+            </applepay>
+          </sale>
+        </cnpOnlineRequest>
+    headers:
+      Content-Type:
+      - text/xml; charset=UTF-8
+      User-Agent:
+      - WorldpayCnpRubyGem/0.1.0
+      X-Ruby-Version:
+      - 2.6.6
+      X-Ruby-Platform:
+      - x86_64-darwin19
+      Connection:
+      - close
+      Host:
+      - payments.vantivprelive.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=C968BBDC9AFDAE9877ACC8359BA5AE08; Path=/vap; Secure; HttpOnly
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '1353'
+      Date:
+      - Wed, 28 Oct 2020 19:37:53 GMT
+      Server:
+      - HTTP/1.1
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        <cnpOnlineResponse version="12.8"
+            xmlns="http://www.vantivcnp.com/schema" response="0" message="Valid Format">
+            <saleResponse id="test-udOcKgDIyEcqdpKbqqTv" reportGroup="Default Report Group">
+                <cnpTxnId>84073006324796773</cnpTxnId>
+                <orderId>test-Z8PheHMSPVMrzvdB2hQD</orderId>
+                <response>000</response>
+                <responseTime>2020-10-28T19:37:53</responseTime>
+                <postDate>2020-10-28</postDate>
+                <message>Approved</message>
+                <authCode>123457</authCode>
+                <fraudResult>
+                    <avsResult>00</avsResult>
+                    <authenticationResult></authenticationResult>
+                </fraudResult>
+                <applepayResponse>
+                    <applicationPrimaryAccountNumber>2331291656527505</applicationPrimaryAccountNumber>
+                    <applicationExpirationDate>231231</applicationExpirationDate>
+                    <currencyCode>840</currencyCode>
+                    <transactionAmount>1</transactionAmount>
+                    <deviceManufacturerIdentifier>123091000585</deviceManufacturerIdentifier>
+                    <paymentDataType>3DSecure</paymentDataType>
+                    <onlinePaymentCryptogram>3sDpPhUIsDQaRR6nAPujUZcwfKg=</onlinePaymentCryptogram>
+                    <eciIndicator>7</eciIndicator>
+                </applepayResponse>
+                <networkTransactionId>610049730936306</networkTransactionId>
+            </saleResponse>
+        </cnpOnlineResponse>
+  recorded_at: Wed, 28 Oct 2020 19:37:54 GMT
+recorded_with: VCR 6.0.0
