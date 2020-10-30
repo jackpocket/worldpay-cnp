@@ -96,7 +96,7 @@ response.dig(:sale_response, :message)
 
 Note: The response data starts with **the value of** the root XML element (attributes included) so do not specify the root XML key as part of the lookup process.
 
-Since the cnpAPI returns an HTTP 200 response for errors, an `WorldpayCnp::Error::InvalidFormatError` will be raised with the included parsed response code and message. The response code comes from the XML root `response` attribute and can be a value of "1" through "5" as a string, not an integer.
+Since the cnpAPI returns an HTTP 200 response for format errors, an `WorldpayCnp::Error::InvalidFormatError` **will be raised with the included parsed response code and message**. The response code comes from the XML root `response` attribute and can be a value of "1" through "5" (note: as a string value).
 
 ## Development
 
