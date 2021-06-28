@@ -5,7 +5,7 @@ RSpec.describe WorldpayCnp::ApiClient do
   end
 
   def fake_request(api_client)
-    fake_response = HTTP::Response.new(status: 200, version: '', body: '')
+    fake_response = HTTP::Response.new(status: 200, version: '', body: '', request: '')
     expect_any_instance_of(HTTP::Client).to receive(:post).and_return(fake_response)
     api_client.perform_post("", {})
   end

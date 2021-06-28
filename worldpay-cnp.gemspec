@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
-  spec.add_dependency "http", '>= 4', '< 5'
+  spec.add_dependency "http", '>= 4', '< 6'
   spec.add_dependency "nokogiri", '~> 1.0'
 
   spec.metadata["homepage_uri"] = spec.homepage
