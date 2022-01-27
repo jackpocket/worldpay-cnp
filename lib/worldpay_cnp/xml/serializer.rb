@@ -7,7 +7,7 @@ module WorldpayCnp
 
       private
 
-      def attributes_or_elements!(parent, key, value)
+      def attributes_or_elements!(document, parent, key, value)
         raise NotImplementedError
       end
 
@@ -15,12 +15,13 @@ module WorldpayCnp
         raise NotImplementedError
       end
 
-      def add_xml_elements!(parent, obj)
+      def add_xml_elements!(document, parent, obj)
+        parent = document if parent.nil?
         case obj
         when Hash
-          obj.each { |key, value| attributes_or_elements!(parent, key, value) }
+          obj.each { |key, value| attributes_or_elements!(document, parent, key, value) }
         when Array
-          obj.each { |value| add_xml_elements!(parent, value) }
+          obj.each { |value| add_xml_elements!(document, parent, value) }
         else
           insert_text!(parent, obj)
         end

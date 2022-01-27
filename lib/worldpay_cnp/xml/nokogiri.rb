@@ -26,16 +26,16 @@ module WorldpayCnp
         include XML::Serializer
 
         def call(hash)
-          ::Nokogiri::XML::Document.new.tap { |d| add_xml_elements!(d, hash) }.to_s
+          ::Nokogiri::XML::Document.new.tap { |d| add_xml_elements!(d, nil, hash) }.to_s
         end
 
         private
 
-        def attributes_or_elements!(parent, key, value)
+        def attributes_or_elements!(document, parent, key, value)
           return parent[attribute_name(key)] = text_with(value) if attribute?(key)
-          element = ::Nokogiri::XML::Element.new(key.to_s, parent)
+          element = ::Nokogiri::XML::Element.new(key.to_s, document)
           parent.add_child(element)
-          add_xml_elements!(element, value)
+          add_xml_elements!(document, element, value)
         end
 
         def insert_text!(element, text)
