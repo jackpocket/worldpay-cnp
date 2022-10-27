@@ -65,7 +65,7 @@ client.create_transaction(
   sale: {
     "@id": "123",
     "@report_group": "Default Report Group",
-    order_id: "456"
+    order_id: "456",
     amount: "1000",
     order_source: "ecommerce",
     card: {
