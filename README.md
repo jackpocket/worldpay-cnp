@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/worldpay_cnp.svg)][gem]
 ![Test Suite](https://github.com/jackpocket/worldpay-cnp/workflows/Tests/badge.svg)
 
-A Ruby library for the Worldpay cnpAPI with a simple interface for creating transactions as a Ruby hash to XML and back. So no real request objects. Since the cnpAPI uses camelCase, this library will handle converting to and from snake_case for you. While Worldpay has an official [CnpOnline Ruby SDK](https://github.com/Vantiv/cnp-sdk-for-ruby), they no longer support it.
+A Ruby library for the Worldpay cnpAPI with a simple interface for creating transactions as a Ruby hash to XML and back. So no real request objects. Since the cnpAPI uses `camelCase`, this converts to and from `snake_case` for you. While Worldpay has an official [CnpOnline Ruby SDK](https://github.com/Vantiv/cnp-sdk-for-ruby), they no longer support it.
 
 ## Installation
 
