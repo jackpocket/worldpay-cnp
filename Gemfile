@@ -8,3 +8,8 @@ gem "rspec", "~> 3.12"
 gem "dotenv"
 gem "vcr"
 gem "webmock"
+
+group :test do
+  gem "simplecov", require: false
+  gem "simplecov-cobertura"
+end
