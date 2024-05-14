@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.description   = "A modern and simple Ruby interface to the Worldpay cnpAPI."
   spec.homepage      = "https://github.com/jackpocket/worldpay-cnp"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
   spec.add_dependency "http", '>= 4', '< 6'
   spec.add_dependency "nokogiri", '~> 1.0'
