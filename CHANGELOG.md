@@ -4,6 +4,11 @@
 
 ...
 
+## 1.0.0 (2024-07-31)
+
+* Only package essential files in gem release.
+* No code changes.
+
 ## 0.1.1 (2022-01-27)
 
 * Resolves a deprecation warning with Nokogiri 1.13.0.
