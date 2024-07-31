@@ -8,18 +8,18 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.6)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
     base64 (0.2.0)
     bigdecimal (3.1.8)
     crack (1.0.0)
       bigdecimal
       rexml
     diff-lcs (1.5.1)
-    docile (1.4.0)
+    docile (1.4.1)
     domain_name (0.6.20240107)
     dotenv (3.1.2)
-    ffi (1.16.3)
+    ffi (1.17.0)
     ffi-compiler (1.3.2)
       ffi (>= 1.15.5)
       rake
@@ -30,7 +30,7 @@ GEM
       http-cookie (~> 1.0)
       http-form_data (~> 2.2)
       llhttp-ffi (~> 0.5.0)
-    http-cookie (1.0.5)
+    http-cookie (1.0.6)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
     llhttp-ffi (0.5.0)
@@ -40,8 +40,8 @@ GEM
     nokogiri (1.16.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    public_suffix (5.0.5)
-    racc (1.8.0)
+    public_suffix (6.0.1)
+    racc (1.8.1)
     rake (13.2.1)
     rexml (3.3.2)
       strscan
@@ -51,7 +51,7 @@ GEM
       rspec-mocks (~> 3.13.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.0)
+    rspec-expectations (3.13.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-mocks (3.13.1)
@@ -88,4 +88,4 @@ DEPENDENCIES
   worldpay_cnp!
 
 BUNDLED WITH
-   2.3.10
+   2.5.16
