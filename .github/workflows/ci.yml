@@ -27,7 +27,7 @@ jobs:
       - name: Run Tests
         env:
           COVERAGE: true
-          RUBYOPT: "-W:deprecated"
+          RUBYOPT: "-W:deprecated --enable-frozen-string-literal --debug-frozen-string-literal"
         run: bundle exec rake
       - name: Rename coverage file by matrix run
         run: mv coverage/coverage.xml coverage/coverage-ruby-${{ matrix.ruby }}.xml
