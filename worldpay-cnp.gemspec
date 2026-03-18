@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/jackpocket/worldpay-cnp"
   spec.license = "MIT"
 
-  spec.add_dependency "http", '>= 4', '< 6'
+  spec.add_dependency "http", '>= 4', '< 7'
   spec.add_dependency "nokogiri", '~> 1.0'
 
   spec.metadata["homepage_uri"] = spec.homepage
