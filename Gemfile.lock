@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    worldpay_cnp (1.0.0)
+    worldpay_cnp (1.1.0)
       http (>= 4, < 7)
       nokogiri (~> 1.0)
 

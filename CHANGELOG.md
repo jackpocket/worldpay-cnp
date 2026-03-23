@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 (2026-03-23)
 
-...
+* Permit http v6.
 
 ## 1.0.0 (2024-07-31)
 
