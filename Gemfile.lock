@@ -23,7 +23,7 @@ GEM
       llhttp (~> 0.6.1)
     http-cookie (1.1.6)
       domain_name (~> 0.5)
-    llhttp (0.6.1)
+    llhttp (0.6.2)
     mini_portile2 (2.8.9)
     nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
