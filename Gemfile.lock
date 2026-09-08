@@ -15,7 +15,7 @@ GEM
       bigdecimal
       rexml
     diff-lcs (1.6.2)
-    domain_name (0.6.20260829)
+    domain_name (0.6.20260902)
     dotenv (3.2.0)
     hashdiff (1.2.1)
     http (6.0.4)
@@ -45,7 +45,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.7)
-    simplecov (1.1.1)
+    simplecov (1.2.0)
     simplecov-cobertura (4.0.0)
       rexml
       simplecov (~> 1.0)
